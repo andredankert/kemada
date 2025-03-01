@@ -27,7 +27,7 @@ const categoryImages = categories.flatMap(category => {
   const categoryPath = path.join(galleryDir, category);
   return fs.readdirSync(categoryPath)
     .filter(file => 
-      /\.(jpg|jpeg|png|gif)$/i.test(file) &&
+      /\.(jpg|jpeg|png|gif|webp)$/i.test(file) &&
       !file.startsWith('.')
     )
     .map(file => ({

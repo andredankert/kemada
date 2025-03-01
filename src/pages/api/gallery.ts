@@ -16,7 +16,7 @@ export default async function handler(
     
     // Filter for image files
     const imageFiles = files.filter(file => 
-      /\.(jpg|jpeg|png|gif)$/i.test(file)
+      /\.(jpg|jpeg|png|gif|webp)$/i.test(file)
     );
 
     return res.status(200).json({ images: imageFiles });

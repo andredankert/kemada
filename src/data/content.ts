@@ -48,7 +48,7 @@ export const content = {
     hero: {
       title: "Hinter den Kulissen",
       description: "Bei uns erhalten Sie die Möglichkeit, mehr über Ihren erworbenen Artikel zu erfahren. Wenn man malt, dann wird oft nicht daran gedacht, was die Figur bereits für einen Weg hinter sich hat bis sie von Ihnen bemalt werden kann.",
-      image: "/images/Werkstatt/KollageHinterDenKulissen.jpg"
+      image: "/images/Werkstatt/KollageHinterDenKulissen.webp"
     },
     workshop: {
       title: "Unsere Werkstatt",
@@ -67,7 +67,7 @@ export const content = {
           description: "Die Kombination von Herstellungs- und Gestaltungsraum ermöglicht es unseren Kunden, einen direkten Einblick in den Produktionsprozess zu erhalten."
         }
       ],
-      image: "/images/Werkstatt/kollagewerkstatt.jpg"
+      image: "/images/Werkstatt/kollagewerkstatt.webp"
     },
     production: {
       title: "Unsere Produktionsweise",
@@ -90,7 +90,7 @@ export const content = {
           description: "Nach dem Verputzen werden die Figuren im Brennofen bei 1060°C gebrannt. Dieser Prozess dauert 12 bis 16 Stunden und ist der letzte Schritt vor der Bemalung."
         }
       ],
-      image: "/images/Werkstatt/Produktionaabfolge.jpg"
+      image: "/images/Werkstatt/Produktionaabfolge.webp"
     },
     cta: {
       title: "Interesse geweckt?",
@@ -112,7 +112,7 @@ export const content = {
         title: "Mobile Events",
         description: "Wir kommen zu Ihnen! Ob für Kinder oder Erwachsene - wir bringen das kreative Erlebnis direkt zu Ihnen nach Hause, zum Kindergeburtstag, Dorffest, Firmenjubiläum, Weihnachtsfeier oder an jeden anderen Event und Ort Ihrer Wahl.",
         detailedInfo: "Sie können uns frühs, mittags oder abends buchen, stundenweise bis ganztags, selbst an Wochenenden und Feiertagen. Wir sind flexibel und passen uns Ihren Wünschen an.",
-        image: "/images/Werkstatt/kollage.jpg",
+        image: "/images/Werkstatt/kollage.webp",
         popular: true
       },
       {
@@ -120,14 +120,14 @@ export const content = {
         title: "Kreativkurse",
         description: "Individuelle oder regelmäßige Kurse für alle Altersgruppen. Perfekt für Kurkliniken, Altersheime, Kindergärten oder Schulen. Lernen Sie verschiedene Maltechniken in einer entspannten Atmosphäre.",
         detailedInfo: "Jeder Teilnehmer kann seine Kreativität frei entfalten und malen, was er möchte. Eine Vorbestellung unseres vielfältigen Sortiments wird empfohlen. Unsere Kunstwerke sind bereits ab 5€ erhältlich - perfekt für jeden Geldbeutel.",
-        image: "/images/gallery/deco/keramikmalerei.dankert_1492603822_1496391781657684531_2234629575.jpg"
+        image: "/images/gallery/deco/keramikmalerei.dankert_1492603822_1496391781657684531_2234629575.webp"
       },
       {
         id: 3,
         title: "Starterpakete",
         description: "Gestalten Sie Ihre eigenen Keramikfiguren bequem von zu Hause aus. Wir versenden ausgewählte Figuren und Malzubehör direkt zu Ihnen - perfekt für kreative Stunden im eigenen Zuhause.",
         detailedInfo: "Kontaktieren Sie uns für aktuelle Angebote, Preise und Zubehör. In unserer Galerie finden Sie vielfältige Inspirationen für Ihre eigenen Kreationen.",
-        image: "/images/Werkstatt/Starterpaket.jpg"
+        image: "/images/Werkstatt/Starterpaket.webp"
       }
     ],
     cta: {
@@ -144,43 +144,43 @@ export const content = {
         id: "christmas",
         title: "Weihnachtliche Magie",
         description: "Handgefertigte Weihnachtsdekorationen, die Ihrem Zuhause festlichen Glanz verleihen. Jedes Stück erzählt seine eigene Geschichte der Weihnachtszeit.",
-        image: "/images/gallery/christmas/SAM_3231-.jpg"
+        image: "/images/gallery/christmas/SAM_3231-.webp"
       },
       {
         id: "deco",
         title: "Dekoratives für Zuhause und im Garten",
         description: "Einzigartige Keramik-Kunstwerke, die Ihrem Zuhause und Garten eine persönliche Note verleihen. Von Vasen bis zu Gartenfiguren.",
-        image: "/images/gallery/deco/SAM_0250-.jpg"
+        image: "/images/gallery/deco/SAM_0250-.webp"
       },
       {
         id: "animals",
         title: "Tierische Begleiter",
         description: "Liebevoll gestaltete Tierfiguren, die Leben in Ihren Garten bringen. Von niedlichen Waldtieren bis zu exotischen Kreaturen.",
-        image: "/images/gallery/animals/SAM_0297-.jpg"
+        image: "/images/gallery/animals/SAM_0297-.webp"
       },
       {
         id: "figures",
         title: "Feen, Trolle und andere Wesen",
         description: "Magische Figuren aus der Welt der Fantasie. Jedes Stück ist ein Tor zu einer verzauberten Welt voller Märchen und Geschichten.",
-        image: "/images/gallery/figures/gnomi.jpg"
+        image: "/images/gallery/figures/gnomi.webp"
       },
       {
         id: "halloween",
         title: "Halloween Grusel",
         description: "Schaurig-schöne Dekorationen für die gruseligste Zeit des Jahres. Von verspielten Kürbissen bis zu mysteriösen Kreaturen.",
-        image: "/images/gallery/halloween/SAM_3155-.jpg"
+        image: "/images/gallery/halloween/SAM_3155-.webp"
       },
       {
         id: "easter",
         title: "Österliche Freude",
         description: "Frühlingshafte Dekorationen für die Osterzeit. Bunte Hasen, niedliche Küken und andere österliche Motive zum Verschönern Ihres Zuhauses.",
-        image: "/images/gallery/easter/SAM_0339-800.jpg"
+        image: "/images/gallery/easter/SAM_0339-800.webp"
       },
       {
         id: "jewelry",
         title: "Handgefertigter Schmuck",
         description: "Einzigartige Keramik-Ohrringe in verschiedenen Designs. Leicht zu tragen und ein echter Blickfang für jeden Anlass.",
-        image: "/images/gallery/earrings/SAM_0037o.jpg"
+        image: "/images/gallery/earrings/SAM_0037o.webp"
       }
     ]
   },

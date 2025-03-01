@@ -67,7 +67,7 @@ const AboutSection: React.FC = () => {
           <div className="order-1 lg:order-2 relative">
             <div className="reveal relative z-10 rounded-2xl overflow-hidden shadow-xl">
               <img 
-                src="/images/Werkstatt/keramikmalerei.dankert_1450798661_1145704668656533570_2234629575.jpg" 
+                src="/images/Werkstatt/keramikmalerei.dankert_1450798661_1145704668656533570_2234629575.webp" 
                 alt="Keramik Workshop" 
                 className="w-full h-[400px] lg:h-[500px] object-cover"
                 loading="lazy"

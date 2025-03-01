@@ -15,19 +15,19 @@ interface GalleryImage {
 const galleryImages: GalleryImage[] = [
   // Christmas Category
   {
-    src: "/images/gallery/christmas/SAM_3231-.jpg",
+    src: "/images/gallery/christmas/SAM_3231-.webp",
     category: "Christmas",
     title: "Christmas Angel",
     description: "Delicate handcrafted Christmas angel"
   },
   {
-    src: "/images/gallery/christmas/SAM_3199-.jpg",
+    src: "/images/gallery/christmas/SAM_3199-.webp",
     category: "Christmas",
     title: "Festive Ornament",
     description: "Traditional Christmas decoration"
   },
   {
-    src: "/images/gallery/christmas/P1030204-800.jpg",
+    src: "/images/gallery/christmas/P1030204-800.webp",
     category: "Christmas",
     title: "Holiday Scene",
     description: "Detailed Christmas scene"
@@ -35,19 +35,19 @@ const galleryImages: GalleryImage[] = [
   
   // Decoration Category
   {
-    src: "/images/gallery/deco/SAM_0250-.jpg",
+    src: "/images/gallery/deco/SAM_0250-.webp",
     category: "Decoration",
     title: "Garden Gnome",
     description: "Charming ceramic garden gnome"
   },
   {
-    src: "/images/gallery/deco/Blaettervase-800.jpg",
+    src: "/images/gallery/deco/Blaettervase-800.webp",
     category: "Decoration",
     title: "Decorative Vase",
     description: "Elegant ceramic vase"
   },
   {
-    src: "/images/gallery/deco/SAM_0388-.jpg",
+    src: "/images/gallery/deco/SAM_0388-.webp",
     category: "Decoration",
     title: "Home Accent",
     description: "Beautiful ceramic decoration"
@@ -55,19 +55,19 @@ const galleryImages: GalleryImage[] = [
   
   // Animals Category
   {
-    src: "/images/gallery/animals/SAM_0349.jpg",
+    src: "/images/gallery/animals/SAM_0349.webp",
     category: "Animals",
     title: "Woodland Animals",
     description: "Ceramic woodland creatures"
   },
   {
-    src: "/images/gallery/animals/SAM_2957a.JPG",
+    src: "/images/gallery/animals/SAM_2957a.webp",
     category: "Animals",
     title: "Forest Friends",
     description: "Whimsical animal figures"
   },
   {
-    src: "/images/gallery/animals/SAM_0297-.jpg",
+    src: "/images/gallery/animals/SAM_0297-.webp",
     category: "Animals",
     title: "Nature Collection",
     description: "Garden wildlife collection"
