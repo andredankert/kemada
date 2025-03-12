@@ -201,6 +201,14 @@ export const testimonials: Testimonial[] = [
     position: "Mutter & Kreativbegeisterte",
     date: "15. März 2024",
     rating: 5
+  },
+  {
+    id: 25,
+    content: "Ein wunderschöner Familiennachmittag! Mit unseren zwei Kindern konnten wir in entspannter Atmosphäre kreativ werden. Die geduldige Anleitung und die große Auswahl an Motiven haben es jedem leicht gemacht, etwas Besonderes zu gestalten. Am Ende hatten wir nicht nur tolle Kunstwerke, sondern auch wertvolle gemeinsame Erinnerungen. Absolut empfehlenswert!",
+    author: "Sophie & André",
+    position: "Kreativbegeisterte",
+    date: "15. April 2023",
+    rating: 5
   }
 ];
 

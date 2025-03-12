@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { content } from "@/data/content";
+import { version } from '@/config/version';
 
 const Footer: React.FC = () => {
   const { company, footer } = content;
@@ -73,6 +74,9 @@ const Footer: React.FC = () => {
         <div className="border-t border-kemada-800 mt-12 pt-8 text-center text-kemada-400">
           <p>© {currentYear} {company.name}. Alle Rechte vorbehalten.</p>
         </div>
+      </div>
+      <div className="text-center text-xs text-gray-500 py-4">
+        <p>Version {new Date(version.buildDate).toLocaleDateString('de-DE')}</p>
       </div>
     </footer>
   );

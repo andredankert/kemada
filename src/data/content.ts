@@ -112,7 +112,7 @@ export const content = {
         title: "Mobile Events",
         description: "Wir kommen zu Ihnen! Ob für Kinder oder Erwachsene - wir bringen das kreative Erlebnis direkt zu Ihnen nach Hause, zum Kindergeburtstag, Dorffest, Firmenjubiläum, Weihnachtsfeier oder an jeden anderen Event und Ort Ihrer Wahl.",
         detailedInfo: "Sie können uns frühs, mittags oder abends buchen, stundenweise bis ganztags, selbst an Wochenenden und Feiertagen. Wir sind flexibel und passen uns Ihren Wünschen an.",
-        image: "/images/Werkstatt/kollage.webp",
+        image: "/images/Werkstatt/malrunde.webp",
         popular: true
       },
       {

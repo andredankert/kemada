@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate-gallery": "node scripts/generate-gallery.js",
-    "build": "npm run generate-gallery && vite build",
+    "build": "node scripts/update-version.js && npm run generate-gallery && vite build",
     "build:dev": "npm run generate-gallery && vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint ."
@@ -60,7 +60,11 @@
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.3",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",

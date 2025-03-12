@@ -28,31 +28,68 @@ const ContactSection: React.FC = () => {
     setFormState((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSubmitted(true);
-      toast({
-        title: contact.form.successMessage.title,
-        description: contact.form.successMessage.description,
-        variant: "default",
-      });
-      setFormState({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
+    try {
+      console.log('Sending contact form data:', formState);
       
-      // Reset the submitted state after a few seconds
-      setTimeout(() => {
-        setIsSubmitted(false);
-      }, 3000);
-    }, 1500);
+      // Use the same API endpoint for both production and development
+      // This will be properly handled by the web server in each environment
+      const apiUrl = '/api/contact';
+        
+      console.log('Using API URL:', apiUrl);
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
+
+      console.log('Response status:', response.status);
+      const responseText = await response.text();
+      console.log('Raw response:', responseText);
+
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error('Failed to parse response as JSON:', parseError);
+        throw new Error('Server returned invalid JSON response. This might be due to a server configuration issue.');
+      }
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+        toast({
+          title: contact.form.successMessage.title,
+          description: contact.form.successMessage.description,
+          variant: "default",
+        });
+        setFormState({
+          name: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+        
+        setTimeout(() => {
+          setIsSubmitted(false);
+        }, 3000);
+      } else {
+        throw new Error(data.message || 'Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast({
+        title: "Fehler",
+        description: error instanceof Error ? error.message : "Es gab ein Problem beim Senden Ihrer Nachricht. Bitte versuchen Sie es später erneut.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
   
   useEffect(() => {
