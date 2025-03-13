@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { testimonials, suggestedRoles } from "@/data/testimonials";
+import config from "@/config";
 
 const TestimonialsPage = () => {
   const { toast } = useToast();
@@ -26,12 +27,28 @@ const TestimonialsPage = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('/api/testimonial', {
+      // Web3Forms API endpoint
+      const apiUrl = 'https://api.web3forms.com/submit';
+      
+      // Create the form data object for Web3Forms
+      const web3FormData = {
+        ...formData,
+        access_key: config.web3forms.access_key,
+        subject: `New testimonial from ${formData.name}`,
+        from_name: config.web3forms.from_name + ' Testimonial Form',
+        to_name: config.web3forms.to_name,
+        rating_stars: '★'.repeat(formData.rating) + '☆'.repeat(5 - formData.rating),
+        redirect: 'false',
+        botcheck: ''
+      };
+      
+      const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(web3FormData),
       });
 
       const data = await response.json();
@@ -130,6 +147,9 @@ const TestimonialsPage = () => {
                   Ihre Erfahrung teilen
                 </h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Hidden honeypot field to prevent spam */}
+                  <input type="hidden" name="botcheck" style={{ display: 'none' }} />
+                  
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-kemada-700 mb-1">
                       Name *

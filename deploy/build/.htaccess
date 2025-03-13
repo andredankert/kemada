@@ -1,0 +1,36 @@
+# Enable rewriting
+RewriteEngine On
+
+# If the request is not for a file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rewrite all requests to the root index.html
+RewriteRule ^ index.html [QSA,L]
+
+# Set security headers
+<IfModule mod_headers.c>
+  # Protect against XSS attacks
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://api.web3forms.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.web3forms.com; frame-src 'self'; object-src 'none'"
+  
+  # Prevent MIME type sniffing
+  Header set X-Content-Type-Options "nosniff"
+  
+  # Protect against clickjacking
+  Header set X-Frame-Options "SAMEORIGIN"
+  
+  # Enable XSS filtering
+  Header set X-XSS-Protection "1; mode=block"
+  
+  # Control referrer information
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  
+  # Enable HSTS
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  
+  # Control browser features
+  Header set Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+</IfModule>
+
+# Handle API requests separately
+RewriteRule ^api/(.*)$ api/$1 [QSA,L] 

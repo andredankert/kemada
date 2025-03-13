@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Card, CardContent } from "@/components/ui/card";
 import { content } from "@/data/content";
+import config from "@/config";
 
 const ContactSection: React.FC = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -35,30 +36,33 @@ const ContactSection: React.FC = () => {
     try {
       console.log('Sending contact form data:', formState);
       
-      // Use the same API endpoint for both production and development
-      // This will be properly handled by the web server in each environment
-      const apiUrl = '/api/contact';
+      // Web3Forms API endpoint
+      const apiUrl = 'https://api.web3forms.com/submit';
+      
+      // Create the form data object for Web3Forms
+      const formData = {
+        ...formState,
+        access_key: config.web3forms.access_key,
+        subject: `New contact request from ${formState.name}`,
+        from_name: config.web3forms.from_name + ' Contact Form',
+        to_name: config.web3forms.to_name,
+        redirect: 'false',
+        botcheck: ''
+      };
         
-      console.log('Using API URL:', apiUrl);
+      console.log('Using Web3Forms API');
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify(formData),
       });
 
       console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Raw response:', responseText);
-
-      let data;
-      try {
-        data = JSON.parse(responseText);
-      } catch (parseError) {
-        console.error('Failed to parse response as JSON:', parseError);
-        throw new Error('Server returned invalid JSON response. This might be due to a server configuration issue.');
-      }
+      const data = await response.json();
+      console.log('Response data:', data);
 
       if (response.ok && data.success) {
         setIsSubmitted(true);
@@ -166,6 +170,9 @@ const ContactSection: React.FC = () => {
               <h3 className="font-serif text-2xl font-medium text-kemada-900 mb-6">{contact.form.title}</h3>
               
               <form onSubmit={handleSubmit} className="space-y-6">
+                {/* Hidden honeypot field to prevent spam */}
+                <input type="hidden" name="botcheck" style={{ display: 'none' }} />
+                
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-medium text-kemada-700">

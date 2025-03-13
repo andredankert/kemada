@@ -1,0 +1,19 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Handle /api/contact endpoint
+RewriteRule ^contact$ contact.php [L]
+
+# Handle /api/testimonial endpoint
+RewriteRule ^testimonial$ testimonial.php [L]
+
+# Set default headers for all API responses
+<IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+    Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Handle OPTIONS requests for CORS preflight
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ $1 [R=200,L] 

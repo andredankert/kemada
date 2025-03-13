@@ -64,7 +64,7 @@ ${message}
 
     return res.status(200).json({ message: 'Email sent successfully', success: true });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return res.status(500).json({ message: 'Error sending email', success: false });
+    console.error('Email konnte nicht gesendet werden:', error);
+    return res.status(500).json({ message: 'Email konnte nicht gesendet werden', success: false });
   }
 } 

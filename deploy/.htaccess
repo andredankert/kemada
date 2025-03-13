@@ -1,0 +1,13 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# If the request is for a real file or directory, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# If the request starts with /api/, route to the API directory
+RewriteRule ^api/(.*)$ api/$1 [L]
+
+# Otherwise, route all requests to index.html for the SPA
+RewriteRule ^ index.html [L] 
