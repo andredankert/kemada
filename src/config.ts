@@ -5,7 +5,7 @@ const isDevelopment = window.location.hostname === 'localhost' ||
 const config = {
   // Web3Forms configuration
   web3forms: {
-    access_key: '72e59793-e27f-40d2-a308-1044b9e54596', // Replace with your actual access key from web3forms.com
+    access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '', // Access key from environment variables
     from_name: 'Kemada Website',
     to_name: 'Kemada Team'
   },
